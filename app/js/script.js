@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    console.log(emailjs);
+
     if ( emailjs ) {
         emailjs.init("user_d5YOhq2lPZOSZcNXgB5vb");
     }
