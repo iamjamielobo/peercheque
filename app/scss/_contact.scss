@@ -110,6 +110,8 @@
                     nav {
                         display: flex;
                         flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
 
                         span {
                             margin-bottom: 30px;
@@ -119,7 +121,7 @@
                         .btn-orange {
                             background: $skin;
                             border-radius: 30px;
-                            padding: 12px 10px 9px;
+                            padding: 16px 20px 19px;
                             line-height: 40px;
                         }
                     }
@@ -224,9 +226,11 @@
                 .form-field {
                     margin-bottom: 25px;
                     font-family: $font-uno;
-                    &:last-child {
+
+&:last-child {
                         margin-bottom: 0;
                     }
+
                     input {
                         border: none;
                         background-image: none;
@@ -243,16 +247,19 @@
                         line-height: 20px;
                         color: #F3F2F2;
                         font-family: $font-uno;
+
                         &::placeholder {
                             color: $white;
                             opacity: 1;
                             font-size: 16px;
                             line-height: 20px;
                         }
-                        &:focus {
+
+&:focus {
                             border-bottom: 1px solid $white;
                         }
                     }
+
                     .submit-btn {
                         background: #E47961;
                         border-radius: 30px;
@@ -263,7 +270,8 @@
                         margin-top: 11px;
                         cursor: pointer;
                     }
-                    .success-msg {
+
+.success-msg {
                         color: #155724;
                         background-color: #d4edda;
                         border-color: #c3e6cb;
@@ -271,11 +279,13 @@
                         font-size: 16px;
                         line-height: 20px;
                         padding: 15px;
+
                         &._show {
                             display: inline-block;
                         }
                     }
-                    .error-msg {
+
+.error-msg {
                         display: none;
                         color: #721c24;
                         background-color: #f8d7da;
@@ -283,6 +293,7 @@
                         padding: 10px;
                         margin-top: 15px;
                     }
+
                     &._error {
                         .error-msg {
                             display: inline-block;
