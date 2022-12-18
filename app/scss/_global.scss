@@ -1,0 +1,37 @@
+$black: #000000;
+$white: #ffffff;
+$skin: #E47961;
+$grey: #323138;
+
+.text-beige {
+    color: $skin!important;
+}
+
+.text-grey {
+    color: $grey;
+}
+
+.relative {
+    position: relative;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+@mixin bold {
+    font-weight: bold;
+}
+
+// Helpers
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+.align-center {
+    text-align: center;
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"script.js","names":["$","document","ready","click","this","toggleClass","validateEmail","email","match"],"sources":["script.js"],"mappings":"AAAAA,EAAEC,UAAUC,OAAM,WAIdF,EAAE,cAAcG,OAAM,WAClBH,EAAEI,MAAMC,YAAY,WACpBL,EAAE,oBAAoBK,YAAY,UACtC,GAuEJ,IAEA,IAAIC,cAAiBC,GACVA,EAAMC,MACT"}
