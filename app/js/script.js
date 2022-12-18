@@ -1,81 +1,107 @@
 $(document).ready(function () {
 
-    // emailjs.init("user_d5YOhq2lPZOSZcNXgB5vb");
+    emailjs.init("user_d5YOhq2lPZOSZcNXgB5vb");
 
     $(".hamburger").click(function () {
         $(this).toggleClass("_active");
         $('.nav-mobile-list').toggleClass('_active');
     });
 
+    $('.js-form-submit').click(function (e) {
 
-    // $('.submit-btn').click(function (e) {
+        e.preventDefault()
 
-    //     e.preventDefault()
+        var $name = $('#js-name');
+        var nameVal = $name.val();
+        var $email = $('#js-email');
+        var emailVal = $email.val();
+        var $phone = $('#js-phone');
+        var phoneVal = $phone.val();
+        var $profile = $('#js-profile');
+        var profileVal = $profile.val();
+        var $what = $('#js-what');
+        var whatVal = $what.val();
 
-    //     var $name = $('#name');
-    //     var nameVal = $name.val();
-    //     var $email = $('#email');
-    //     var emailVal = $email.val();
-    //     var $why = $('#why');
-    //     var whyVal = $why.val();
-    //     var package = $('.cost-block._selected').data('package');
+        if (nameVal === "") {
+            $name.parent('.form-field').addClass('_error');
+            $name.focus();
+        }
+        else {
+            $name.parent('.form-field').removeClass('_error');
+        }
 
-    //     if (nameVal === "") {
-    //         $name.parent('.form-field').addClass('_error');
-    //         $name.focus();
-    //     }
-    //     else {
-    //         $name.parent('.form-field').removeClass('_error');
-    //     }
+        if (emailVal === "" || !validateEmail(emailVal)) {
+            $email.parent('.form-field').addClass('_error');
+            $email.focus();
+        }
+        else {
+            $email.parent('.form-field').removeClass('_error');
+        }
 
-    //     if (emailVal === "" || !validateEmail(emailVal)) {
-    //         $email.parent('.form-field').addClass('_error');
-    //         $email.focus();
-    //     }
-    //     else {
-    //         $email.parent('.form-field').removeClass('_error');
-    //     }
+        if (phoneVal === "") {
+            $phone.parent('.form-field').addClass('_error');
+            $phone.focus();
+        }
+        else {
+            $phone.parent('.form-field').removeClass('_error');
+        }
 
-    //     if (whyVal === null) {
-    //         $why.parent().parent('.form-field').addClass('_error');
-    //         $why.focus();
-    //     }
-    //     else {
-    //         $why.parent().parent('.form-field').removeClass('_error');
-    //     }
+        if (profileVal === "") {
+            $profile.parent('.form-field').addClass('_error');
+            $profile.focus();
+        }
+        else {
+            $profile.parent('.form-field').removeClass('_error');
+        }
+
+        if (whatVal === "") {
+            $what.parent('.form-field').addClass('_error');
+            $what.focus();
+        }
+        else {
+            $what.parent('.form-field').removeClass('_error');
+        }
 
 
-    //     if (nameVal !== "" && emailVal !== "" && whyVal !== null) {
+        if (nameVal !== "" && phoneVal !== "" && emailVal !== "" && profileVal !== "" && whatVal !== "") {
 
-    //         $('.loader-container').removeClass('hide');
-    //         $('.submit-btn').addClass('hide');
-    //         $name.parent('.form-field').removeClass('_error');
-    //         $email.parent('.form-field').removeClass('_error');
-    //         $why.parent().parent('.form-field').removeClass('_error');
+            // $('.loader-container').removeClass('hide');
+            // $('.submit-btn').addClass('hide');
 
-    //         var templateParams = {
-    //             name: nameVal,
-    //             email: emailVal,
-    //             imTrainingFor: whyVal,
-    //             packageType: package
-    //         };
+            $name.parent('.form-field').removeClass('_error');
+            $email.parent('.form-field').removeClass('_error');
+            $phone.parent('.form-field').removeClass('_error');
+            $profile.parent('.form-field').removeClass('_error');
+            $what.parent('.form-field').removeClass('_error');
 
-    //         emailjs.send('service_011qhag', 'template_8akb9so', templateParams)
-    //             .then(function(response) {
-    //                 console.log('SUCCESS!', response.status, response.text);
-    //                 $('.loader-container').addClass('hide');
-    //                 $('.submit-btn').removeClass('hide');
-    //                 $('#success_tic').modal('show');
-    //                 $name.val('');
-    //                 $email.val('');
-    //                 $why.val(0);
-    //                 $('.cost-block').removeClass('_selected');
-    //                 $('.cost-block').eq(0).addClass('_selected');
-    //             }, function(error) {
-    //                 console.log('FAILED...', error);
-    //         });
-    //     }
-    // })
+            var templateParams = {
+                name: nameVal,
+                email: emailVal,
+                phone: phoneVal,
+                profile: profileVal,
+                what: whatVal
+            };
+
+            emailjs.send('service_011qhag', 'template_6jwryox', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    $('.success-msg').addClass('_show');
+
+                    $name.val('');
+                    $email.val('');
+                    $phone.val('');
+                    $profile.val('');
+                    $what.val('');
+
+                    setTimeout(function () {
+                        $('.success-msg').removeClass('_show')
+                    }, 5000);
+
+                }, function(error) {
+                    console.log('FAILED...', error);
+            });
+        }
+    })
 });
 
 var validateEmail = (email) => {
