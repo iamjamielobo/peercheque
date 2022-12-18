@@ -220,14 +220,14 @@
 
                 @media only screen and (max-width: 1024px) {
                     margin-top: 20px;
-                    padding: 22px 24px 22px;
+                    padding: 10px 24px 22px;
                 }
 
                 .form-field {
                     margin-bottom: 25px;
                     font-family: $font-uno;
 
-&:last-child {
+                    &:last-child {
                         margin-bottom: 0;
                     }
 
