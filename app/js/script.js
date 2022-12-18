@@ -1,6 +1,8 @@
 $(document).ready(function () {
 
-    emailjs.init("user_d5YOhq2lPZOSZcNXgB5vb");
+    if ( emailjs ) {
+        emailjs.init("user_d5YOhq2lPZOSZcNXgB5vb");
+    }
 
     $(".hamburger").click(function () {
         $(this).toggleClass("_active");
