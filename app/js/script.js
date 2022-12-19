@@ -1,7 +1,5 @@
 $(document).ready(function () {
 
-    console.log(emailjs);
-
     if ( emailjs ) {
         emailjs.init("user_d5YOhq2lPZOSZcNXgB5vb");
     }
@@ -9,6 +7,30 @@ $(document).ready(function () {
     $(".hamburger").click(function () {
         $(this).toggleClass("_active");
         $('.nav-mobile-list').toggleClass('_active');
+    });
+
+    $(".tab-list .tabs .tab").click(function () {
+        var $this = $(this);
+        var tabFilter = $this.data('tab');
+
+        $(".tab-list .tabs .tab").removeClass('_active');
+        $this.addClass('_active');
+
+        $('.table-row').removeClass('_hidden');
+
+        if ( tabFilter === 'All' ) {
+            return false;
+        }
+
+        $('.table-row').each(function(idx, el) {
+            var elFilter = $(el).data('filter');
+
+            if ( tabFilter !== elFilter ) {
+                $(el).addClass('_hidden');
+            }
+
+            // and the rest of your code
+        });
     });
 
     $('.js-form-submit').click(function (e) {

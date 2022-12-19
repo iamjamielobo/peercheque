@@ -305,6 +305,10 @@
                 grid-template-columns: 45% 55%;
             }
 
+            &._hidden {
+                display: none;
+            }
+
             .col {
                 display: flex;
                 align-items: center;
