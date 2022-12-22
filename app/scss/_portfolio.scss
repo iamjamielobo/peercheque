@@ -218,7 +218,15 @@
     .tab-list {
         padding: 40px 0 45px;
 
+        @media only screen and (max-width: 1024px) {
+            padding: 40px 0 15px;
+        }
+
         .tabs {
+            @media only screen and (max-width: 1024px) {
+                white-space: nowrap;
+                overflow: scroll;
+            }
             .tab {
                 display: inline-block;
                 font-size: 20px;
@@ -229,14 +237,15 @@
                 background: #EEF0F3;
                 border-radius: 1000px;
                 flex: 1;
-                margin-right: 15px;
-                margin-bottom: 15px;
+                margin-right: 12px;
+                margin-bottom: 20px;
                 cursor: pointer;
 
                 @media only screen and (max-width: 1024px) {
                     font-size: 16px;
                     line-height: 40px;
                     margin-right: 10px;
+                    margin-bottom: 15px;
                 }
 
                 &._active {
@@ -260,7 +269,10 @@
             padding: 18px 0;
 
             @media only screen and (max-width: 1024px) {
-                grid-template-columns: 40% 60%;
+                grid-template-columns: 45% 55%;
+                font-size: 12px;
+                line-height: 40px;
+                padding: 0;
             }
 
             &:nth-child(2) {
@@ -286,7 +298,7 @@
 
                 &:nth-child(3) {
                     @media only screen and (max-width: 1024px) {
-                        padding-right: 15px;
+                        padding: 0 15px;
                     }
                 }
             }
@@ -306,6 +318,7 @@
                 font-size: 16px;
                 line-height: 20px;
                 grid-template-columns: 45% 55%;
+                padding: 10px 0;
             }
 
             &._hidden {
@@ -337,11 +350,18 @@
                 &:nth-child(3) {
                     @media only screen and (max-width: 1024px) {
                         padding: 0 15px;
+                        font-size: 14px;
+                        line-height: 18px;
                     }
                 }
 
                 .text-wrapper {
-                    .company-name {}
+                    .company-name {
+                        @media only screen and (max-width: 1024px) {
+                            font-size: 14px;
+                            line-height: 20px;
+                        }
+                    }
 
                     .mobile-company {
                         display: none;
@@ -357,7 +377,7 @@
                 }
             }
 
-            &:nth-last-child(even) {
+            &:nth-last-child(odd) {
                 background-color: #EEF0F3;
             }
         }

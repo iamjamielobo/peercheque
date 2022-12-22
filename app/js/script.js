@@ -13,8 +13,16 @@ $(document).ready(function () {
         var $this = $(this);
         var tabFilter = $this.data('tab');
 
-        $(".tab-list .tabs .tab").removeClass('_active');
-        $this.addClass('_active');
+        if ( $this.hasClass('_active') ) {
+            $("[data-tab='All']").addClass('_active');
+            $this.removeClass('_active');
+            tabFilter = 'All'
+        }
+        else {
+            $(".tab-list .tabs .tab").removeClass('_active');
+            $this.addClass('_active');
+        }
+
 
         $('.table-row').removeClass('_hidden');
 
