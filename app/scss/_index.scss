@@ -389,22 +389,41 @@
                         color: $black;
                         margin-bottom: 25px;
 
+                        span {
+                            // display: inline-flex;
+                        }
+
                         @media only screen and (max-width: 1024px) {
                             font-size: 16px;
                             line-height: 25px;
                         }
+                        &._less {
+                            .less {
+                                // display: inline-flex;
+                            }
+                            .more {
+                                display: none;
+                            }
+                        }
+                        &._more {
+                            .more {
+                                // display: inline-flex;
+                            }
+                            .less {
+                                display: none;
+                            }
+                        }
                     }
                     .know-more {
+                        cursor: pointer;
                         margin-top: 25px;
-                        a {
-                            font-weight: 700;
-                            font-size: 16px;
-                            line-height: 22px;
-                            color: $black;
-                            @media only screen and (min-width: 1024px) {
-                                &:hover {
-                                    color: darken($color: $black, $amount: 10%);
-                                }
+                        font-weight: 700;
+                        font-size: 16px;
+                        line-height: 22px;
+                        color: $black;
+                        @media only screen and (min-width: 1024px) {
+                            &:hover {
+                                color: darken($color: $black, $amount: 10%);
                             }
                         }
                     }

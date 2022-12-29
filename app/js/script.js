@@ -4,6 +4,21 @@ $(document).ready(function () {
         emailjs.init("user_d5YOhq2lPZOSZcNXgB5vb");
     }
 
+    $('.know-more').click(function (e) {
+        var $this = $(this);
+        var $text = $this.parent('.text');
+
+        console.log($this);
+        console.log($text);
+
+        if ( $text.hasClass('_less') ) {
+            $text.removeClass('_less').addClass('_more');
+        }
+        else {
+            $text.addClass('_less').removeClass('_more');
+        }
+    })
+
     $(".hamburger").click(function () {
         $(this).toggleClass("_active");
         $('.nav-mobile-list').toggleClass('_active');
