@@ -409,6 +409,7 @@
                         }
                     }
                     .tagline {
+                        display: flex;
                         position: relative;
                         padding-top: 25px;
                         border-top: 1px solid rgba(0, 0, 0, 0.3);
