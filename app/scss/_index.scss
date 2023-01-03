@@ -281,7 +281,7 @@
                     }
 
                     .img {
-                        height: 100%;
+                        // height: 100%;
                         background-color: #f4f4f4;
                         // border-radius: 20px;
                         // overflow: hidden;
@@ -797,19 +797,20 @@
                     text-align: center;
                 }
             }
+        }
 
-            .copyright {
-                font-size: 20px;
-                line-height: 30px;
-                letter-spacing: -0.02em;
-                text-align: right;
+        .copyright {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 20px;
+            line-height: 30px;
+            letter-spacing: -0.02em;
 
-                @media only screen and (max-width: 1024px) {
-                    justify-content: center;
-                    text-align: center;
-                    font-size: 12px;
-                    line-height: 12px;
-                }
+            @media only screen and (max-width: 1024px) {
+                justify-content: center;
+                text-align: center;
+                font-size: 12px;
+                line-height: 12px;
             }
         }
     }
