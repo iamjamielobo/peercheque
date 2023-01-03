@@ -168,7 +168,7 @@
                             margin-right: 0;
                         }
 
-                        &._active {
+                        &._active, &:hover {
                             border-bottom: 2px solid $skin;
                             padding: 0 5px 5px;
                         }
@@ -179,7 +179,13 @@
                             padding: 12px 42px 15px;
                             line-height: 40px;
                             font-size: 24px;
-                            line-height: 40px;
+                            &:hover {
+                                background: $white;
+                                color: $skin;
+                                border-radius: 30px;
+                                padding: 12px 42px 15px;
+                                border-bottom: 0;
+                            }
                         }
                     }
                 }

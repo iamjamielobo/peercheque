@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     if ( emailjs ) {
-        emailjs.init("user_d5YOhq2lPZOSZcNXgB5vb");
+        emailjs.init("HmmtKITJrAmisKnCp");
     }
 
     $('.know-more').click(function (e) {
@@ -131,7 +131,7 @@ $(document).ready(function () {
                 what: whatVal
             };
 
-            emailjs.send('service_011qhag', 'template_6jwryox', templateParams)
+            emailjs.send('service_ehgh5cm', 'template_wsmvd7i', templateParams)
                 .then(function(response) {
                     console.log('SUCCESS!', response.status, response.text);
                     $('.success-msg').addClass('_show');
