@@ -1,7 +1,22 @@
 $(document).ready(function () {
 
+    // if (location.protocol !== 'https:') {
+    //     location.replace(`https:${location.href.substring(location.protocol.length)}`);
+    // }
+
     if ( emailjs ) {
         emailjs.init("HmmtKITJrAmisKnCp");
+    }
+
+    if ( location.pathname.indexOf('portfolio') !== -1 ) {
+        var myList = $('.table-row-items');
+        var listitems = myList.children('.table-row');
+
+        listitems.sort(function(a, b) {
+        return $(a).find('.company-name').text().toUpperCase().localeCompare($(b).find('.company-name').text().toUpperCase());
+        })
+
+        $.each(listitems, function(idx, itm) { $('.table-row-items').append(itm); });
     }
 
     $('.know-more').click(function (e) {

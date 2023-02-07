@@ -475,13 +475,26 @@
                 margin-top: 40px;
             }
             a {
-                font-size: 46px;
+                font-size: 32px;
                 line-height: 40px;
                 color: $white;
 
                 @media only screen and (max-width: 1024px) {
-                    font-size: 32px;
-                    line-height: 40px;
+                    font-size: 24px;
+                    line-height: 32px;
+                }
+                &.btn-orange {
+                    background: $white;
+                    border-radius: 8px;
+                    padding: 16px 35px 14px;
+                    // line-height: 40px;
+                    color: $skin;
+
+                    @media only screen and (max-width: 1024px) {
+                        padding: 11px 22px 11px;
+                        font-size: 24px;
+                        line-height: 32px;
+                    }
                 }
             }
         }
@@ -508,6 +521,10 @@
 
             &:first-child {
                 max-width: 859px;
+
+                @media only screen and (max-width: 1024px) {
+                    max-width: 300px;
+                }
             }
 
             &:last-child {
@@ -578,10 +595,10 @@
 
         .sec-title {
             text-align: center;
-            font-size: 80px;
-            line-height: 40px;
+            font-size: 50px;
+            line-height: 50px;
             margin-bottom: 71px;
-            font-weight: bold;
+            font-weight: 700;
 
             @media only screen and (max-width: 1024px) {
                 font-size: 24px;
@@ -655,15 +672,14 @@
 
                 .designation {
                     font-size: 20px;
-                    line-height: 40px;
+                    line-height: 20px;
                     color: #c3c3c3;
-                    margin: 7px 0 14px;
+                    margin: 5px 0 0;
 
-                    @media only screen and (max-width: 1024px) {
-                        font-size: 20px;
-                        line-height: 40px;
-                        margin: 7px 0 20px;
-                    }
+                    // @media only screen and (max-width: 1024px) {
+                    //     font-size: 20px;
+                    //     line-height: 40px;
+                    // }
                 }
 
                 .text {
